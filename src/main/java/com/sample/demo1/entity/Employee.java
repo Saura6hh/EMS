@@ -16,15 +16,15 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long empId;
-    private String empFname;
-    private String empLname;
-    private Integer empMobNo;
-    private String empAdd;
-    private Integer joinDate;
-    private String empMail;
+    private String firstName;
+    private String lastName;
+    private String MobNo;
+    private String Address;
+    private String joinDate;
+    private String mail;
 
     private boolean isActive;
-    private String createdby;
+    private String createdBy;
     private LocalDateTime createdDate;
     private String updatedBy;
     private LocalDateTime updatedDate;
