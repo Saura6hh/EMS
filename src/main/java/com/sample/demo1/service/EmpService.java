@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class EmpService {
@@ -29,5 +30,8 @@ public class EmpService {
         employee.setUpdatedDate(LocalDateTime.now());
 
         return employeeRepo.save(employee);
+    }
+    public List<Employee> getAllEmp(){
+        return employeeRepo.findAll();
     }
 }

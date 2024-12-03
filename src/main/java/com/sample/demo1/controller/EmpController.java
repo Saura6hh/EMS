@@ -5,12 +5,12 @@ import com.sample.demo1.entity.Employee;
 import com.sample.demo1.service.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 import static org.springframework.http.HttpStatus.CREATED;
+import static org.springframework.http.HttpStatus.FOUND;
 
 @RestController
 @RequestMapping("/ems")
@@ -21,5 +21,10 @@ public class EmpController {
     @PostMapping
     public ResponseEntity<Employee> addEmployee(@RequestBody EmpDTO empDTO){
         return new ResponseEntity<Employee>(empService.addEmp(empDTO),CREATED);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Employee>> getAllEmp(){
+        return new ResponseEntity<List<Employee>>(empService.getAllEmp(),FOUND);
     }
 }
